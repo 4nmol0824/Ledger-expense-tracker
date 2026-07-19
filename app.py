@@ -25,6 +25,8 @@ CATEGORY_COLORS = {
 }
 CATEGORIES = list(CATEGORY_COLORS.keys())
 
+CURRENCY = "₹"  # change to "$", "€", etc. if you need a different currency
+
 # ----------------------------- STYLE -----------------------------
 
 st.markdown("""
@@ -189,7 +191,7 @@ with left:
                 f"<span class='tag' style='background:{color}22;color:{color}'>{row['category']}</span>",
                 unsafe_allow_html=True,
             )
-            c4.write(f"${row['amount']:.2f}")
+            c4.write(f"{CURRENCY}{row['amount']:.2f}")
             if c5.button("✕", key=f"del_{row['id']}"):
                 st.session_state.expenses = st.session_state.expenses[st.session_state.expenses["id"] != row["id"]]
                 save_expenses(st.session_state.expenses)
@@ -198,7 +200,7 @@ with left:
 with right:
     st.subheader("This Month")
     total = df["amount"].sum() if not df.empty else 0.0
-    st.metric(label=f"{len(df)} expense(s) logged", value=f"${total:,.2f}")
+    st.metric(label=f"{len(df)} expense(s) logged", value=f"{CURRENCY}{total:,.2f}")
     if not df.empty:
         by_cat = df.groupby("category")["amount"].sum().sort_values(ascending=False)
         st.bar_chart(by_cat, color="#2F6F4E")
