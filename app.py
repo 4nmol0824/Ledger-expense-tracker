@@ -74,7 +74,7 @@ If a field cannot be determined, use your best reasonable guess. Amount must be 
 def extract_receipt(image_bytes, media_type):
     client = get_client()
     resp = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-3-flash-preview",
         contents=[
             types.Part.from_bytes(data=image_bytes, mime_type=media_type),
             EXTRACTION_PROMPT,
