@@ -22,3 +22,7 @@ GEMINI_API_KEY = "your-key-here"
 # Or just use it online using Streamlit 
 No setup needed — open the live link and start uploading receipts.      
 Live: https://ledger-expense-tracker-4xnufgxtgtz232rztcvdvm.streamlit.app/
+
+# ## Sample Receipts
+I'm providing a few sample bill/receipt photos below — feel free to download and use them to test the app.   
+Download sample bills to test the app: https://drive.google.com/drive/folders/1a8ZWIFx9YugMF-IbApSTW5Y_Sfl8ozF-?usp=sharing
